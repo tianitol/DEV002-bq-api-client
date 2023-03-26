@@ -6,6 +6,7 @@ import Login from './vistas/Login';
 import Home from './vistas/Home';
 import Ordenes from './vistas/Ordenes';
 import Cocina from './vistas/Cocina';
+import NotFound from './vistas/NotFound';
 
 function App() {
   const [user, setUser] = useState (null);
@@ -24,6 +25,7 @@ function App() {
       <Route path='login' element={<Login />} />
       <Route path='ordenes' element={<Login setUser={setUser} />} />
       <Route path='cocina' element={<Login setUser={setUser} />} />
+      <Route path='*' element={<NotFound />} />
    </Routes>
     )
   }
