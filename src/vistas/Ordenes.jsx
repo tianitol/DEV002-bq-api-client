@@ -1,14 +1,9 @@
-import { useNavigate } from 'react-router-dom';
 import logoMenu from '../assets/logoMenu.png';
+import fondoOrden from '../../public/fondoOrden.png';
 
-function Ordenes(props){
-  
 
-    console.log(props);
-
-    return (
-    <>
-    <header className='header'>
+function UserInfo() {
+   return( 
     <section className='idUser'>
         <h2>
             Nombre
@@ -17,26 +12,58 @@ function Ordenes(props){
             Rol
         </h3>
     </section>
+    )
+}
 
-    
-    <button type='button' className='salir'>
+function Salir(){
+    return(
+     <button type='button' className='salir'>
         Salir
-    </button>
+     </button>
+    )
+}
 
-    <img src={logoMenu} />
-    <div>
-    <button type='button'>
-    NUEVA ORDEN
-    </button>
-    <button type='button'>
-    ORDENES
-    </button>
-    </div>
-    
-</header> 
-<main className='productos-lista' >
-aqui va la imagen del ramen como fondo
-</main>
+function NavButton(){
+    return(
+        <nav className='button-nav'>
+            <button type='button'>
+                NUEVA ORDEN
+            </button>
+            <button type='button'>
+                ORDENES
+            </button>
+         </nav>
+    )
+}
+
+function HeaderOrden(){
+    return(
+        <header className='header'>
+            <UserInfo />
+            <Salir />
+            <img src={logoMenu} />
+            <NavButton />
+        </header>
+    )
+}
+
+function MainOrden(){
+    return(
+        <main className='productos-lista' >
+            <img src={fondoOrden} className='imagOrdenes'/>
+        </main>
+    )
+}
+function Ordenes(props){
+  
+
+    console.log(props);
+
+    return (
+    <>
+     <HeaderOrden />
+     <MainOrden />
+
 </>
 )
 }
