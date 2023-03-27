@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.productos-lista{
+  width: 100vh;
+  height: 100vh;
+  background-image: url(../public/fondoOrden.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 30%;
+  color: blue;
+  
+
+}
