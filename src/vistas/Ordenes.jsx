@@ -27,7 +27,7 @@ function UpperHeader(){
     return(
         <div className='upper-header'>
             <UserInfo />
-            <img src={logoMenu} />
+            <img src={logoMenu} className='logo-menu'/>
             <Salir />
          
         </div>
