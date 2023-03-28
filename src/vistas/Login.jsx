@@ -1,4 +1,5 @@
 
+//import fondoLogin from '../assets/fondoLogin.png';
 
 function Login(props){
     const { setUser } = props;
@@ -10,10 +11,22 @@ function Login(props){
     }
     return (
         <>
-            <h1>Login</h1>
-            <button type='button' onClick={login}> 
-                Sign in 
+        <div className="fondo-login">
+        <form className="form-login">
+        
+            <label >Usuario</label>
+            <input type='text' placeholder="username" required='true'></input>
+            <label>Contraseña</label>
+            <input type='password' placeholder="******" required='true'></input>
+            <button type='button' onClick={login} className='button-login'> 
+                Entrar
             </button>
+        </form>
+        </div>
+        {/* <img src={fondoLogin} className='fondo-login'/> */}
+       
+            
+            
 
         </>
     );

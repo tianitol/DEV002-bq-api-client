@@ -1,5 +1,5 @@
 import logoMenu from '../assets/logoMenu.png';
-import fondoOrden from '../../public/fondoOrden.png';
+import fondoOrden from '../assets/fondoOrden.png';
 
 
 function UserInfo() {
@@ -17,12 +17,23 @@ function UserInfo() {
 
 function Salir(){
     return(
-     <button type='button' className='salir'>
+     <button type='button' className='salir' >
         Salir
      </button>
     )
 }
 
+function UpperHeader(){
+    return(
+        <div className='upper-header'>
+            <UserInfo />
+            <img src={logoMenu} />
+            <Salir />
+         
+        </div>
+             
+    )
+}
 function NavButton(){
     return(
         <nav className='button-nav'>
@@ -39,9 +50,7 @@ function NavButton(){
 function HeaderOrden(){
     return(
         <header className='header'>
-            <UserInfo />
-            <Salir />
-            <img src={logoMenu} />
+            <UpperHeader />
             <NavButton />
         </header>
     )
@@ -54,8 +63,9 @@ function MainOrden(){
         </main>
     )
 }
+
 function Ordenes(props){
-  
+    
 
     console.log(props);
 
