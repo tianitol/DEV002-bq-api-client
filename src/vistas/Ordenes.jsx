@@ -1,5 +1,6 @@
 import logoMenu from '../assets/logoMenu.png';
 import Select from 'react-select';
+import React, { useState } from 'react';
 
 
 function UserInfo() {
@@ -34,24 +35,12 @@ function UpperHeader(){
              
     )
 }
-function NavButton(){
-    return(
-        <nav className='button-nav'>
-            <button type='button'>
-                NUEVA ORDEN
-            </button>
-            <button type='button'>
-                ORDENES
-            </button>
-         </nav>
-    )
-}
 
 function HeaderOrden(){
     return(
         <header className='header'>
             <UpperHeader />
-            <NavButton />
+            {/* <NavButton /> */}
         </header>
     )
 }
@@ -81,7 +70,7 @@ const menuHotDrinks = [
     { label:"Chocolate", value:"chocolate" },
 ]
 
-function MenuOrden() {
+function NuevaOrden() {
 
     const handleSelectChange = ({ value }) => {
         console.log(value)
@@ -121,11 +110,26 @@ function MenuOrden() {
 }
 
 function MainOrden(){
+
+    const [nOButtonClicked, setnOButtonClicked] = useState(false);
+    const handlenOButtonClick = () => {
+        setnOButtonClicked(true)
+    }
+
     return(
+        <>
+        <nav className='button-nav'>
+        <button type='button' onClick={handlenOButtonClick}>
+            NUEVA ORDEN
+        </button>
+        <button type='button'>
+            ORDENES
+        </button>
+     </nav>
         <main className='productos-lista' >
-           {/* <img src={fondoOrden} className='imagOrdenes'/> */}
-            <MenuOrden />
+            { nOButtonClicked ? <NuevaOrden/>:null }
         </main>
+        </>
     )
 }
 
