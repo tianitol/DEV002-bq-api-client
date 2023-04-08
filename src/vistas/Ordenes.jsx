@@ -88,6 +88,16 @@ function MenuOrden() {
     }
     return (
         <>
+        <div className='rigth-order'>
+        <h3 className='h3-order'>
+            nº Orden
+        </h3>
+        <input type='number' placeholder='00' required='true' className='input-order'/>
+        <h3 className='h3-order'>
+            Nombre Cliente
+        </h3>
+        <input type='text' placeholder='Clara' required='true' className='input-order'/>
+
            <nav className='menu-select'>
            <Select 
                 defaultValue = { { label: 'Ramen', value: 'title' } }
@@ -105,6 +115,7 @@ function MenuOrden() {
                 onChange = { handleSelectChange }
            />
       </nav>
+      </div>
         </>
     )
 }

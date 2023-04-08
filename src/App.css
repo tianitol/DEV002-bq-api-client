@@ -175,3 +175,17 @@ input{
   flex-direction: column;
   justify-content: space-between;
 }
+
+.rigth-order{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+
+}
+
+.input-order, .h3-order{
+  width: 30%;
+  position: relative;
+  color: #2B68C7;
+}
