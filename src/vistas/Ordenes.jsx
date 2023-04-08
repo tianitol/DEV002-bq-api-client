@@ -1,5 +1,5 @@
 import logoMenu from '../assets/logoMenu.png';
-import fondoOrden from '../assets/fondoOrden.png';
+import Select from 'react-select';
 
 
 function UserInfo() {
@@ -56,13 +56,69 @@ function HeaderOrden(){
     )
 }
 
+const menuRamen = [
+    { label:"Original Ramen", value:"original" },
+    { label:'Spicy Miso Ramen', value:'spicy-miso' },
+    { label:'Curry Ramen', value:'curry' },
+    { label:'Shoyu Ramen', value:'shoyu' },
+    { label:'Veg Ramen', value:'veg' }
+];
+
+const menuColdDrinks = [
+    { label:"Happoshu", value:"happoshu" },
+    { label:'Té helado', value:'te' },
+    { label:'Agua 500cc', value:'aguaP' },
+    { label:'Agua 1500cc', value:'aguaG' },
+    { label:'Soda 500cc', value:'soda' },
+    { label:'Bebida lata 350cc', value:'bebida' },
+]
+
+const menuHotDrinks = [
+    { label:"Amazake", value:"amazake" },
+    { label:"Shogacha", value:"shogacha" },
+    { label:"Té verde", value:"teVerde" },
+    { label:"Café", value:"cafe" },
+    { label:"Chocolate", value:"chocolate" },
+]
+
+function MenuOrden() {
+
+    const handleSelectChange = ({ value }) => {
+        console.log(value)
+    }
+    return (
+        <>
+           <nav className='menu-select'>
+           <Select 
+                defaultValue = { { label: 'Ramen', value: 'title' } }
+                options = { menuRamen }
+                onChange = { handleSelectChange }
+           />
+           <Select 
+                defaultValue = { { label: 'Bebidas Frías', value: 'title' } }
+                options = { menuColdDrinks }
+                onChange = { handleSelectChange }
+           />
+           <Select 
+                defaultValue = { { label: 'Bebidas Calientes', value: 'title' } }
+                options = { menuHotDrinks }
+                onChange = { handleSelectChange }
+           />
+      </nav>
+        </>
+    )
+}
+
 function MainOrden(){
     return(
         <main className='productos-lista' >
-            <img src={fondoOrden} className='imagOrdenes'/>
+           {/* <img src={fondoOrden} className='imagOrdenes'/> */}
+            <MenuOrden />
         </main>
     )
 }
+
+
 
 function Ordenes(props){
     

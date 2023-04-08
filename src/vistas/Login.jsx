@@ -15,7 +15,7 @@ function Login(props){
         <form className="form-login">
         
             <label >Usuario</label>
-            <input type='text' placeholder="username" required='true'></input>
+            <input type='text' placeholder="username" required='true' />
             <label>Contraseña</label>
             <input type='password' placeholder="******" required='true'></input>
             <button type='button' onClick={login} className='button-login'> 
